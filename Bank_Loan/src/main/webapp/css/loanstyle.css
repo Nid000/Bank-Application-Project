@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body {
+	margin: 2%;
+}
+
+#applyForm {
+	width: 35%;
+	margin: 2%;
+}
+
+.lbl_form {
+	border: 15px none;
+	padding: 0 15px 15px 0;
+}
+
+.input {
+	
+}
