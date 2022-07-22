@@ -18,7 +18,10 @@ public class appController {
 			ps.setString(1, username);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				
+				lmodel.setUsername(rs.getString(1));
+				lmodel.setLoanAcc(rs.getString(2));
+				lmodel.setLoanAmt(rs.getInt(3));
+				lmodel.setBalance(rs.getInt(4));
 			}
 		} catch (Exception e) {
 			System.out.println(e);
@@ -30,6 +33,11 @@ public class appController {
 		loanAppModel updateLoan = new loanAppModel();
 		try {
 			con = connectionDB.getcon();
+			ps = con.prepareStatement("INSERT INTO bankapplication.loan_accounts VALUES (?, ?, ?, ?)");
+			ps.setInt(2,  loanAcc);
+			ps.setInt(3, loanAmt);
+			ps.setInt(4, loanBal);
+			ResultSet rs = ps.executeQuery();
 		}
 		catch (Exception e) {
 			System.out.println(e);

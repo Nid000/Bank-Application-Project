@@ -6,7 +6,7 @@ public class loanAppModel {
 		private String username;
 		private String name;
 		private int annualinc;
-		private int loan_acc;
+		private String loan_acc;
 		private int loan_amt;
 		private int loan_bal;
 		
@@ -15,7 +15,7 @@ public class loanAppModel {
 		}
 
 
-		public loanAppModel(int acc_num, String username, String name, int annualinc, int loan_acc, int loan_amt, int loan_bal) {
+		public loanAppModel(int acc_num, String username, String name, int annualinc, String loan_acc, int loan_amt, int loan_bal) {
 			super();
 			this.acc_num = acc_num;
 			this.username = username;
@@ -24,6 +24,22 @@ public class loanAppModel {
 			this.loan_acc = loan_acc;
 			this.loan_amt = loan_amt;
 			this.loan_bal = loan_bal;
+		}
+		
+		public void setAcc(int acc_num) {
+			this.acc_num = acc_num;
+		}
+		
+		public int getAcc() {
+			return acc_num;
+		}
+		
+		public void setUsername(String username) {
+			this.username = username;
+		}
+		
+		public String getUsername() {
+			return username;
 		}
 		
 		public void setName(String name) {
@@ -42,12 +58,20 @@ public class loanAppModel {
 			return annualinc;
 		}
 		
-		public void setAcc(int acc_num) {
-			this.acc_num = acc_num;
+		public void setLoanAcc(String loan_acc) {
+			this.loan_acc = loan_acc;
 		}
 		
-		public int getAcc() {
-			return acc_num;
+		public String getLoanAcc() {
+			return loan_acc;
+		}
+		
+		public void setLoanAmt(int loan_amt) {
+			this.loan_amt = loan_amt;
+		}
+		
+		public int getLoanAmt() {
+			return loan_amt;
 		}
 		
 		public void setBalance(int loan_bal) {
@@ -58,7 +82,7 @@ public class loanAppModel {
 			return loan_bal;
 		}
 		
-		public void setLoan(int acc_num, int loan_amt, int loan_bal, int loan_acc) {
+		public void setLoan(int acc_num, int loan_amt, int loan_bal, String loan_acc) {
 			this.acc_num = acc_num;
 			this.loan_amt = loan_amt;
 			this.loan_bal = loan_bal;

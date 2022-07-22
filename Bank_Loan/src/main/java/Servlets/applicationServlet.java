@@ -38,8 +38,8 @@ import appModels.loanAppModel;
 		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 		 */
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			String username = null;
-			request.getSession().setAttribute("username", username);
+			String name = "loan_test";
+			request.setAttribute("name", name);
 			int loanAmt = Integer.parseInt(request.getParameter("loanAmt"));
 			int duration = Integer.parseInt(request.getParameter("duration"));
 			String payout = request.getParameter("payout");
@@ -47,7 +47,7 @@ import appModels.loanAppModel;
 			
 			appController cnt = new appController();
 			loanAppModel setter = new loanAppModel();
-			loanAppModel getter = new loanAppModel();
+			loanAppModel getter = cnt.get_details(username);
 			
 			int annualIncome = getter.getIncome();
 			int loanBalance = getter.getBalance();
@@ -55,7 +55,7 @@ import appModels.loanAppModel;
 
 			if (submitType.equals("submit") && loanCheck > 0) {
 				//request.getAttribute("l_acc", setter.setLoan(accNum, loanAmt, ));
-				request.getRequestDispatcher("customerHome.jsp").forward(request, response);
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			} else {
 				request.setAttribute("message1", "You have too much loan on hand. Your application was denied.");
 				request.getRequestDispatcher("index.jsp").forward(request, response);
