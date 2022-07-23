@@ -30,7 +30,7 @@ public class appController {
 	}
 	
 	public void update_Loan (int accNum, int loanAcc, int loanAmt, int loanBal) {
-		loanAppModel updateLoan = new loanAppModel();
+		loanAppModel insertLoan = new loanAppModel();
 		try {
 			con = connectionDB.getcon();
 			ps = con.prepareStatement("INSERT INTO bankapplication.loan_accounts VALUES (?, ?, ?, ?)");

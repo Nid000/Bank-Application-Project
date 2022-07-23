@@ -5,9 +5,12 @@
 <head>
 	<link href="css/loanstyle.css" rel="stylesheet" type="text/css">
 	<script>
+		onLoad() {
+			
+		}
+		
 		function applyLoan(loanAmt, duration, payout){
 		try {
-			
 			var loanAmt = document.getElementById("loanAmt").value;
 			var duration = document.getElementById("duration").value;
 			var payout = document.getElementById("payout").value;
