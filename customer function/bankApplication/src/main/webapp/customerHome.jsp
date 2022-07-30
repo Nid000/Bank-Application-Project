@@ -51,6 +51,15 @@ function payloan(acc, lacc){
 	document.forms[0].submit();
 	
 }
+
+function applyloan(name, acc, lacc, lbalance) {
+	document.forms[0].message2.value = name;
+	document.forms[0].acc_num.value = acc;
+	document.form[0].l_acc.value = lacc;
+	document.form[0].l_bal = lbalance;
+	document.forms[0].method = "post";
+	document.forms[0].action = "applyLoanServlet";
+	document.forms[0].submit();
 </script>
 
 <meta charset="UTF-8">
@@ -96,7 +105,7 @@ function payloan(acc, lacc){
 <br><br>
 <td><button type = "button" onclick = "transfer('${accno}','${accamount}')">Transfer Money</button>
 <button type ="button" onclick = "thistory(${accno})">Transaction History</button>
-<button>Apply Loan</button></td>
+<button type ="button" onclick = "applyloan('${accno}','${l_acc},'${l_balance}')">Apply Loan</button></td>
 
 
 <input type="hidden" id="acc_num" name="acc_num">

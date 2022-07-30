@@ -39,13 +39,15 @@
 <meta charset="UTF-8">
 <title>Loan Application - Home</title>
 </head>
-<body onLoad = "NameAndLoan()">
+<body onLoad="loanNotif(l_bal)">
+
+	<form action="applyLoan" method="post" id="applyForm">
+	
 	<h1>Welcome ${name}, to the Loan Application Page!</h1>
 	<h1>${message1}</h1>
 	<h2>To apply for a loan, please fill up the form below</h2>
 	<p class="legend">* Required Field</p>
 	
-	<form action="applyLoan" method="post" id="applyForm">
 		<label class="lbl_form" for="loanAmt">Loan Amount: </label>
 			<input type="text" id="loanAmt" name="loanAmt" class="input"/>
 		<br/>
@@ -80,6 +82,10 @@
 			</select>
 			<br/><br/>
 		<button type="button" onClick="applyLoan('${loanAmt}','${duration}','${payout}')">Apply Loan</button>
+		
+		<input type="hidden" id="acc" name="acc" value="${acc}">
+		<input type="hidden" id="l_acc" name="l_acc" value= "${l_acc}">
+		<input type="hidden" id="l_bal" name="l_bal" value= "${l_bal}">
 	</form>
 </body>
 </html>
