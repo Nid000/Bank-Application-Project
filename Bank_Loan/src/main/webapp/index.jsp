@@ -4,11 +4,8 @@
 <html>
 <head>
 	<link href="css/loanstyle.css" rel="stylesheet" type="text/css">
+	<script src="javascript/loanNotif.js"></script>
 	<script>
-		onLoad() {
-			
-		}
-		
 		function applyLoan(loanAmt, duration, payout){
 		try {
 			var loanAmt = document.getElementById("loanAmt").value;
@@ -42,7 +39,7 @@
 <meta charset="UTF-8">
 <title>Loan Application - Home</title>
 </head>
-<body>
+<body onLoad = "NameAndLoan()">
 	<h1>Welcome ${name}, to the Loan Application Page!</h1>
 	<h1>${message1}</h1>
 	<h2>To apply for a loan, please fill up the form below</h2>
